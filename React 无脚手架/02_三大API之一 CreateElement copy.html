@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/react@18.0.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18.0.0/umd/react-dom.development.js"></script>
+</head>
+
+<body>
+
+  <div id="root"></div>
+
+  <script>
+
+    // react.createElement ：用来创建React元素，
+    // 格式 react.createElement(type, [prop], [...children])
+    // 创建出来的元素不能修改，只能替换
+
+
+    // react 创建元素
+    const button = React.createElement("button", {
+      id: "btn",
+      className: "btn",
+      onClick: () => {
+        alert('hello')
+      }
+    }, "点我一下")
+
+
+    // react 创建元素
+    const changeButton = React.createElement("button", {
+      onClick: () => {
+        const button = React.createElement("button", {
+          id: "btn",
+          className: "btn",
+          onClick: () => {
+            alert('hello')
+          }
+        }, "孙悟空")
+
+
+        const div = React.createElement("div", {
+          className: "box",
+          children: [button, changeButton],
+        })
+
+        root.render(div);
+
+      }
+    }, "修改")
+
+    // 创建div 元素
+    const div = React.createElement("div", {
+      className: "box",
+      children: [button, changeButton],
+    })
+
+    // 创建root
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+
+    root.render(div);
+
+  </script>
+</body>
+
+</html>

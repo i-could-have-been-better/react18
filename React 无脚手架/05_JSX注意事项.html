@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSX</title>
+  <script src="https://unpkg.com/react@18.0.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18.0.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+
+  <div id="root"></div>
+
+
+  <script type="text/babel">
+
+    /**
+     * JSX 注意事项
+     *    1、JSX不是字符串，不要加引号
+     *    2、JSX中HTML 标签必须要小写，React 组件应该大写开头
+     *    3、JSX中有且只有一个根标签
+     *    4、JSX的标签必须要正确（自结束标签必须写 / ）
+     *    5、在JSX中可以使用 {} 嵌入表达式
+     *          有值得语句就是表达式
+     *    6、如果表达式是空值、布尔值、undefined，将不会显示
+     *    7、在JSX中，属性可以直接在标签中设置
+     *          注意：
+     *            class 需要使用 className
+     *            style 中必须使用对象设置
+     *                style = {{ backgroundColor : 'red' }}
+     */
+
+    const div = <div>
+      我是一个div
+      <button onClick={() => { alert("点我干嘛") }}>点我一下</button>
+    </div>
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+
+    root.render(div);
+
+  </script>
+</body>
+
+</html>
