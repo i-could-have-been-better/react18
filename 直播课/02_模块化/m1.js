@@ -26,3 +26,10 @@ console.log("commonJS 模块化");
 //   zbj: "猪八戒",
 // }
 
+
+exports.name = "孙悟空"
+exports.age = "18"
+exports.obj = {
+  name: "猪八戒",
+  age: "18"
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./1.css">
+  <script src="https://cdn.bootcdn.net/ajax/libs/layer/3.5.1/mobile/layer.min.js"></script>
+</head>
+
+<body>
+
+  <div id="btn">点我一下</div>
+
+  <script>
+
+    document.getElementById("btn").addEventListener("click", () => {
+      layer.open({ content: '请填写姓名', skin: 'msg', time: 2 })
+    })
+
+
+
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>虚拟DOM</title>
+  <script src="https://unpkg.com/react@18.0.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18.0.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+
+  <div id="root"></div>
+
+
+  <script type="text/babel">
+
+    /**
+     * 虚拟DOM:
+     *    React元素称之为 虚拟DOM，虚拟DOM会在比较之后将其渲染成真实DOM，虚拟DOM的作用是简化用户操作DOM，并且检测页面最小改动修改DOM的显示
+     *    key 的作用：在 数组进行遍历渲染列表的时候，react无法精准定位每一个元素，如果用户大批量的渲染，修改DOM的话，会造成性能损耗
+     *    
+    */
+
+    const arr = ["孙悟空", "猪八戒", '沙和尚', "唐僧"]
+
+    const list = <ul>
+      {
+        arr.map(item => <li key={item}>{item}</li>)
+      }
+    </ul>
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+
+    root.render(list);
+
+  </script>
+
+</body>
+
+</html>
