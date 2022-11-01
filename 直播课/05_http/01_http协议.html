@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <form method="post" id="form">
+            <input type="text" name="username" />
+            <input type="password" name="password" />
+            <button id="btn">提交</button>
+        </form>
+
+
+        <script>
+
+            document.getElementById("btn").onclick = function(e){
+                event.preventDefault();
+                window.open("./02_target.html");
+                fromData();
+            }
+
+            const form = document.getElementById("form");
+
+            function fromData(){
+                console.dir(form);
+                return form.username.value;
+            }
+
+
+        </script>
+    </body>
+</html>
