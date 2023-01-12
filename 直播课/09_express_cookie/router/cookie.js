@@ -13,6 +13,3 @@ router.get("/set", (req, res) => {
 })
 
 module.exports = router
-
-
-
